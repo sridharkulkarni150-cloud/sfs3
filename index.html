@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spaceflight Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Spaceflight Simulator</h1>
+      <div class="controls">
+        <button id="modeToggle">Launch</button>
+        <button id="resetBuild">Reset Rocket</button>
+      </div>
+
+      <section>
+        <h2>Part Palette</h2>
+        <div id="partPalette" class="palette"></div>
+        <p class="hint">Drag parts to grid. Right-click/delete to remove. One part per column, stack upward.</p>
+      </section>
+
+      <section id="flightPanel" class="flight-panel">
+        <h2>Flight Controls</h2>
+        <label for="throttleSlider">Throttle</label>
+        <input id="throttleSlider" type="range" min="0" max="100" value="0" />
+        <div class="telemetry" id="telemetry"></div>
+        <p class="hint">Keyboard: Space throttle+, Ctrl throttle-, Shift stage, Up/Down throttle.</p>
+      </section>
+    </aside>
+
+    <main class="canvas-wrap">
+      <canvas id="gameCanvas" width="800" height="875"></canvas>
+      <div id="placementFeedback" class="feedback hidden"></div>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
